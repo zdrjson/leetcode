@@ -369,6 +369,7 @@
 [Sqrt(x)](https://leetcode.com/problems/sqrtx/)| [C++](./Search/Sqrtx.cpp)| Medium| O(logn)| O(1)|
 [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)| [C++](./Search/MedianTwoSortedArrays.cpp)| Hard| O(log(m + n))| O(1)|
 [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)| [C++](./Search/MinimizeMaxDistanceGasStation.cpp)| Hard| O(nlogm)| O(1)|
+[Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)| [C++](./Search/994.RottingOranges.cpp)| Medium| O(mn)| O(mn)|
 
 ## Sort
 | Title | Solution | Difficulty | Time | Space |
