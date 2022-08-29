@@ -74,7 +74,7 @@
 [Missing Ranges](https://leetcode.com/problems/missing-ranges/)| [C++](./Array/MissingRangescpp)| Medium| O(n)| O(1)|
 [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/)| [C++](./Array/735.AsteroidCollision.cpp)| Medium| O(n)| O(n)|
 [Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)| [C++](./Array/MaximizeDistanceToClosestPersoncpp)| Easy| O(n)| O(1)|
-[Exam Room](https://leetcode.com/problems/exam-room/)| [C++](./Array/ExamRoom.cpp)| Medium| O(n)| O(n)|
+[Exam Room](https://leetcode.com/problems/exam-room/)| [C++](./Array/855.ExamRoom.cpp)| Medium| O(n)| O(n)|
 [Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/)| [C++](./Array/ShortestWordDistancecpp)| Easy| O(n)| O(1)|
 [Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/)| [C++](./Array/ShortestWordDistanceIIcpp)| Medium| O(n)| O(n)|
 [Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/)| [C++](./Array/ShortestWordDistanceIIIcpp)| Medium| O(n)| O(1)|
