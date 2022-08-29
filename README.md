@@ -194,7 +194,7 @@
 [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)| [C++](./Tree/MinimumDepthOfBinaryTree.cpp)| Easy| O(n)| O(1)|
 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)| [C++](./Tree/MaximumDepthOfBinaryTree.cpp)| Easy| O(n)| O(1)|
 [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)| [C++](./Tree/DiameterBinaryTree.cpp)| Easy| O(n)| O(1)|
-[Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)| [C++](./Tree/BalancedBinaryTree.cpp)| Easy|  O(n)| O(n)|
+[Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)| [C++](./Tree/110.BalancedBinaryTree.cpp)| Easy|  O(n)| O(n)|
 [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)| [C++](./Tree/SumLeftLeaves.cpp)| Easy|  O(n)| O(1)|
 [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)| [C++](./Tree/FlattenBinaryTreeLinkedList.cpp)| Medium| O(n)| O(1)|
 [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)| [C++](./Tree/ConvertSortedArrayBinarySearchTree.cpp)| Easy| O(n)| O(1)|
@@ -794,7 +794,7 @@
 |	[C++](./Tree/PathSumII.cpp)	|	113	|	[Path Sum II](https://oj.leetcode.com/problems/path-sum-ii/)	| Medium	|
 |	[C++](./Tree/PathSum.cpp)	|	112	|	[Path Sum](https://oj.leetcode.com/problems/path-sum/)	| Easy	|
 |	[C++](./Tree/MinimumDepthOfBinaryTree.cpp)	|	111	|	[Minimum Depth of Binary Tree](https://oj.leetcode.com/problems/minimum-depth-of-binary-tree/)	| Easy	|
-|	[C++](./Tree/BalancedBinaryTree.cpp)	|	110	|	[Balanced Binary Tree](https://oj.leetcode.com/problems/balanced-binary-tree/)	| Easy	|
+|	[C++](./Tree/110.BalancedBinaryTree.cpp)	|	110	|	[Balanced Binary Tree](https://oj.leetcode.com/problems/balanced-binary-tree/)	| Easy	|
 |		|	109	|	[Convert Sorted List to Binary Search Tree](https://oj.leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)	| Medium	|
 |	[C++](./Tree/ConvertSortedArrayBinarySearchTree.cpp)	|	108	|	[Convert Sorted Array to Binary Search Tree](https://oj.leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)	| Medium	|
 |	[C++](./Tree/107.BinaryTreeLevelOrderTraversalII.cpp)	|	107	|	[Binary Tree Level Order Traversal II](https://oj.leetcode.com/problems/binary-tree-level-order-traversal-ii/)	| Easy	|
