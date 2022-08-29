@@ -1,59 +1,84 @@
-/**
- * Question Link: https://leetcode.com/problems/4sum/
- * Primary idea: Sort the array, and traverse it, increment left or decrease right 
- *               predicated on their sum is greater or not than the target
- * Time Complexity: O(n^3), Space Complexity: O(nC4)
- */
-
-class FourSum {
-    func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
-        let nums = nums.sorted(by: <)
-        var threeSum = 0
-        var twoSum = 0
-        var left = 0
-        var right = 0
-        var res = [[Int]]()
-        
-        guard nums.count >= 4 else {
-            return res
+// Solution 1: Sorting + Binary Search
+// Time complexity: O(n^3 log n + klogk)
+// Space complexity: O(k)
+class Solution {
+public:
+  vector<vector<int>> fourSum(vector<int> &num, int target) {
+    set<vector<int>> h; 
+ 
+    sort(num.begin(), num.end());
+ 
+    int n = num.size();
+ 
+    for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+        for(int k = j + 1; k < n; k++) {
+          int t = target - num[i] - num[j] - num[k];
+          if (t < num[k]) break;
+          if (!std::binary_search(num.begin() + k + 1, num.end(), t)) continue;          
+          h.insert({num[i], num[j], num[k], t});          
         }
-        
-        for i in 0..<nums.count - 3 {
-            guard i == 0 || nums[i] != nums[i - 1] else {
-                continue
-            }
-            threeSum = target - nums[i]
-            
-            for j in i + 1..<nums.count - 2 {
-                guard j == i + 1 || nums[j] != nums[j - 1] else {
-                    continue
-                }
-                twoSum = threeSum - nums[j]
-                
-                left = j + 1
-                right = nums.count - 1
-                while left < right {
-                    if nums[left] + nums[right] == twoSum {
-                        res.append([nums[i], nums[j], nums[left], nums[right]])
-                        repeat {
-                            left += 1
-                        } while left < right && nums[left] == nums[left - 1]
-                            repeat {
-                                right -= 1
-                        } while left < right && nums[right] == nums[right + 1]
-                    } else if nums[left] + nums[right] < twoSum {
-                        repeat {
-                            left += 1
-                        } while left < right && nums[left] == nums[left - 1]
-                    } else {
-                        repeat {
-                            right -= 1
-                        } while left < right && nums[right] == nums[right + 1]
-                    }
-                }
-            }
-        }
-                
-        return res
+      }
     }
-}
+    return vector<vector<int>>(begin(h), end(h));
+  }
+};
+
+// C++ opt
+class Solution {
+public:
+  vector<vector<int>> fourSum(vector<int> &num, int target) {        
+    sort(num.begin(), num.end());
+    if (target > 0 && target > 4 * num.back()) return {};
+    if (target < 0 && target < 4 * num.front()) return {};
+    
+    set<vector<int>> h;    
+    int n = num.size();
+ 
+    for (int i = 0; i < n; i++) {   
+      for (int j = i + 1; j < n; j++) {                
+        for(int k = j + 1; k < n; k++) {
+          int t = target - num[i] - num[j] - num[k];
+          if (t < num[k]) break;
+          if (!std::binary_search(num.begin() + k + 1, num.end(), t)) continue;          
+          h.insert({num[i], num[j], num[k], t});          
+        }           
+      }
+    }
+ 
+    return vector<vector<int>>(begin(h), end(h));
+  }
+};
+
+// Solution 2: Sorting + HashTable
+// Time complexity: O(n^3 + klogk)
+// Space complexity: O(n + k)
+class Solution {
+public:
+  vector<vector<int>> fourSum(vector<int> &num, int target) {        
+    sort(num.begin(), num.end());
+    if (target > 0 && target > 4 * num.back()) return {};
+    if (target < 0 && target < 4 * num.front()) return {};
+    
+    unordered_map<int, int> index;
+    for (int i = 0; i < num.size(); ++i)
+      index[num[i]] = i;
+    
+    set<vector<int>> h;    
+    int n = num.size();
+ 
+    for (int i = 0; i < n; i++) {   
+      for (int j = i + 1; j < n; j++) {                
+        for(int k = j + 1; k < n; k++) {
+          int t = target - num[i] - num[j] - num[k];
+          if (t < num[k]) break;
+          auto it = index.find(t);
+          if (it == index.end() || it->second <= k) continue;
+          h.insert({num[i], num[j], num[k], t});
+        }           
+      }
+    }
+ 
+    return vector<vector<int>>(begin(h), end(h));
+  }
+};
