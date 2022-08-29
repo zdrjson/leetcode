@@ -1,36 +1,19 @@
-/**
- * Question Link: https://leetcode.com/problems/diagonal-traverse/
- * Primary idea: use sum to track matrix index, note to set lower and upper bound to avoid duplicates
- *
- * Time Complexity: O(mn), Space Complexity: O(1)
- *
- */
-
-class DiagonalTraverse {
-    func findDiagonalOrder(_ matrix: [[Int]]) -> [Int] {
-        var res = [Int]()
-        
-        guard matrix.count > 0 && matrix[0].count > 0 else {
-            return res
+// Solution: Hashtable
+// Use diagonal index (i + j) as key.
+// Time complexity: O(n)
+// Space complexity: O(n)
+class Solution {
+public:
+    vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
+        vector<vector<int>> m;    
+        for (int i = 0; i < nums.size(); ++i)
+            for (int j = 0; j < nums[i].size(); ++j) {
+                if (m.size() <= i + j) m.push_back({});
+                m[i + j].push_back(nums[i][j]);
         }
-        
-        let m = matrix.count, n = matrix[0].count
-        var fromTop = false
-        
-        for sum in 0...m + n - 2 {
-            if fromTop {
-                for i in max(sum - n + 1, 0)...min(m - 1, sum) {
-                    res.append(matrix[i][sum - i])
-                }
-            } else {
-                for i in (max(sum - n + 1, 0)...min(m - 1, sum)).reversed() {
-                    res.append(matrix[i][sum - i])
-                }
-            }
-            
-            fromTop = !fromTop
-        }
-        
-        return res
+        vector<int> ans;    
+        for (const auto& d : m)
+            ans.insert(end(ans), rbegin(d), rend(d));
+        return ans;
     }
-}
+};
